@@ -1,6 +1,6 @@
 # JS Card Slider #
 
-[Screenshot](assets/img/ss.png)
+![Screenshot](assets/img/ss.png)
 
 ### See working demo ###
 * TODO: Add working demo url
