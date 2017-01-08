@@ -1,6 +1,6 @@
 # JS Card Slider #
 
-![Screen Shot 2016-11-01 at 20.23.16.png](https://bitbucket.org/repo/LA4Ggg/images/544142493-Screen%20Shot%202016-11-01%20at%2020.23.16.png)
+[Screenshot](assets/img/ss.png)
 
 ### See working demo ###
 * TODO: Add working demo url
