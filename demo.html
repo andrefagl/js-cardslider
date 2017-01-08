@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>JS Card Slider - Demo</title>
+
+        <!-- Viewport scale -->
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+        <!-- Stylesheets -->
+        <link rel="stylesheet" href="assets/css/main.css">
+    </head>
+
+    <body>
+        <h1>JS Card Slider - Demo</h1>
+
+        <div id="slider"></div>
+
+        <!-- js -->
+        <script src="source/js-cardslider.js"></script>
+
+        <script>
+            jsCardslider("#slider").init({
+                dataUrl: 'http://dummy-api.alima.pt/cards',
+                numCards: 3,
+                lazyLoad: true
+            });
+        </script>
+    </body>
+
+</html>

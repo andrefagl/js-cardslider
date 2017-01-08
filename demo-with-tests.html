@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>JS Card Slider - Demo</title>
+
+        <!-- Viewport scale -->
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+        <!-- Stylesheets -->
+        <link rel="stylesheet" href="node_modules/qunitjs/qunit/qunit.css">
+        <link rel="stylesheet" href="assets/css/main.css">
+    </head>
+
+    <body>
+        <h1>JS Card Slider - Demo</h1>
+
+        <div id="slider"></div>
+
+        <!-- js -->
+        <script src="node_modules/qunitjs/qunit/qunit.js"></script>
+        <script src="source/js-cardslider.js"></script>
+
+        <script>
+            var slider = jsCardslider("#slider").init({
+                dataUrl: 'http://dummy-api.alima.pt/cards',
+                numCards: 3,
+                lazyLoad: true
+            });
+        </script>
+
+        <!-- Unit tests -->
+        <script src="assets/js/tests/tests.js"></script>
+
+        <div id="qunit"></div>
+    </body>
+
+</html>

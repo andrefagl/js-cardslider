@@ -1,0 +1,160 @@
+// Core variables and mixins
+@import "variables";
+@import "mixins";
+
+/* General */
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: $body-bg-color;
+    margin: 0;
+    padding: 0;
+}
+h1 {
+    background-color: $card-bg;
+    text-align: center;
+    color: $page-title-color;
+    margin: 0;
+    padding: 20px 0;
+    @include font-size(24px);
+}
+/* Unit tests */
+#qunit {
+	width: 66.6666%;
+	margin: 0 auto;
+	margin-top: 40px;
+}
+/* Component */
+.js-cardslider {
+    @include flexbox();
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: $card-gap $card-gap/2 0 $card-gap/2;
+    .card {
+        background-color: $card-bg;
+        margin: 0 $card-gap/2 $card-gap $card-gap/2;
+        @include flexbox();
+        @include flex-direction(column);
+        width: $card-width; /* 2px are from side borders */
+        border: 1px solid $card-border-color;
+        border-bottom-width: 2px;
+        .content {
+            padding: 12px 19px;
+            .header {
+                @include flexbox();
+                .title {
+                    color:$card-title-color;
+                    @include font-size(23px);
+                    line-height: 1.4;
+                }
+                .headings {
+                    font-weight: bold;
+                }
+                .disclaimer {
+                    color:$card-disclaimer-color;
+                    @include font-size(12px);
+                    text-transform: uppercase;
+                    line-height: 1;
+                }
+                .avatar {
+                    height: 50px;
+                    img {
+                        @include border-radius(50%);
+                        margin-right: 19px;
+                        width: 50px;
+                    }
+                }
+            }
+            .description {
+                padding: 15px 0;
+                color: $card-title-color;
+                line-height: 1.583;
+                @include font-size(12px);
+                min-height: 55px;
+            }
+            .footer {
+                a {
+                    color: $card-link-color;
+                    line-height: 1.583;
+                    @include font-size(16px);
+                    text-decoration: none;
+                    font-weight: bold;
+                }
+            }
+        }
+        .cover {
+            width: 306px;
+            height: 133px;
+            position: relative;
+            .spinner {
+                position: absolute;
+                top: 0;
+                left: 0;
+                bottom: 0;
+                right: 0;
+                background-color: #ffffff;
+                background-image: url('../img/spinner.gif');
+                background-repeat: no-repeat;
+                background-position: 50% 50%;
+                z-index: 1;
+            }
+            img {
+                @extend .cover;
+                @include opacity(0);
+                @include transition(opacity .4s linear);
+                &.visible {
+                    @include opacity(1);
+                }
+            }
+        }
+        &.hidden {
+            display: none;
+        }
+    }
+}
+.card-handlers {
+    text-align: center;
+    .arrow {
+        display: inline-block;
+        border-bottom: 3px solid;
+        width: 11px;
+        height: 11px;
+        color: #2c8833;
+        &.arrow-previous {
+            border-left: 3px solid;
+            transform: rotate(45deg);
+        }
+        &.arrow.arrow-next {
+            border-right: 3px solid;
+            transform: rotate(-45deg);
+        }
+    }
+}
+
+.callout {
+    text-align: center;
+    background-color: #e6e6ed;
+    width: 33.33333%;
+    margin: 0 auto;
+    margin-top: 50px;
+    padding: 20px;
+    @include font-size(34px);
+    @include border-radius(10px);
+    position: relative;
+    p {
+        @include font-size(34px);
+        color: #f9cf00;
+        &.iam {
+            color: #4d4d68;
+            font-weight: bold;
+        }
+    }
+    .by {
+        text-align: right;
+        @include font-size(12px);
+        position: absolute;
+        right: 20px;
+        bottom: -20px;
+        color: #d0d0d0;
+    }
+
+}
